@@ -1,4 +1,4 @@
-
+# 365scores-quiz
 
 ![](https://img.shields.io/badge/architecture-%20Feature--Sliced%20Design-000000?style=flat)
 
@@ -39,8 +39,8 @@ To speed up the development process, it was decided to use anonymous sessions:
 - 3️⃣ On the next visit user's id would from local storage taken
 
 Also, due to time limits Components were not 
-divided into [presentational and container](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) and 
-eslint was not configured.
+divided into [presentational and container](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0), 
+eslint was not configured and there is ability to see only current user's score.
 
 ## Design decisions
 Due to development time constraints and overall small size of the application, it was decided 
