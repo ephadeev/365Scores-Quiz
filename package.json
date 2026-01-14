@@ -1,0 +1,29 @@
+{
+  "name": "365scores-quiz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm run start --prefix client",
+    "client:install": "npm ci --prefix client",
+    "client:build": "npm run build --prefix client",
+    "server:install": "npm ci --prefix server",
+    "server": "npm run start --prefix server",
+    "install": "concurrently \"npm run client:install\" \"npm run server:install\"",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ephadeev/365Scores-Quiz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ephadeev/365Scores-Quiz/issues"
+  },
+  "homepage": "https://github.com/ephadeev/365Scores-Quiz#readme",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0"
+  }
+}
