@@ -1,5 +1,5 @@
-import React, {FC, useEffect, useState} from 'react';
-import { useLocation, useNavigate } from "react-router";
+import React, {FC, useEffect} from 'react';
+import { useNavigate } from "react-router";
 import 'materialize-css';
 import { v4 as uuidv4 } from 'uuid';
 import {setUserId} from './entities/user/model/userSlice';
@@ -7,7 +7,7 @@ import './App.css';
 import Header from "./widgets/Header/ui/Header";
 import Footer from "./widgets/Footer/ui/Footer";
 import AppRoutes from "./pages/lib/routes";
-import {useAppDispatch, useAppSelector} from "./shared/store/lib/reduxHooks";
+import {useAppDispatch} from "./shared/store/lib/reduxHooks";
 
 const App: FC = () => {
     const navigate = useNavigate();
