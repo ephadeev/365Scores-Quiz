@@ -58,19 +58,13 @@ folder and takes everything they need through props.
 
 ## Running locally
 All the following commands should be executed from the root folder of the project.
-1. Install dependencies for running scripts from root directory:
+1. Install necessary dependencies:
 
 ```bash
 npm ci
 ```
 
-2. Install dependencies for backend and frontend
-
-```bash
-npm run install
-```
-
-3. Start both frontend and backend with single command
+2. Start both frontend and backend with single command
 
 ```bash
 npm run dev
