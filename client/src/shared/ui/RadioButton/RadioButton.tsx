@@ -1,12 +1,21 @@
-import React, {FC} from 'react';
+import React, {FC, memo, useCallback} from 'react';
+import {getCurrentQuizCorrectAnswer, setSelectedOption} from "../../../entities/quiz/model/quizSlice";
+import {incrementScore} from "../../../entities/user/model/userSlice";
+import {useAppDispatch, useAppSelector} from "../../store/lib/reduxHooks";
 
 const RadioButton: FC<{
-    id: number,
     option: string,
     checked: boolean,
-    disabled: boolean,
-    onChange: (id: number) => void
-}> = ({id, option, checked, disabled, onChange}) => {
+    disabled: boolean
+}> = memo(({option, checked, disabled}) => {
+    const dispatch = useAppDispatch();
+    const correctOption = useAppSelector(getCurrentQuizCorrectAnswer);
+
+    const checkAnswer = useCallback((): void => {
+        dispatch(setSelectedOption(option));
+        correctOption === option && dispatch(incrementScore());
+    }, [option]);
+
     return (
         <div>
             <label>
@@ -16,11 +25,11 @@ const RadioButton: FC<{
                     type="radio"
                     checked={checked}
                     disabled={disabled}
-                    onChange={() => onChange(id)}/>
+                    onChange={checkAnswer}/>
                 <span>{option}</span>
             </label>
         </div>
     );
-}
+})
 
 export default RadioButton;

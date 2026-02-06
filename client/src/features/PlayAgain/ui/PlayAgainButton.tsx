@@ -15,8 +15,6 @@ const PlayAgainButton = () => {
         dispatch(setSelectedOption(null));
     };
 
-    console.log('render: PlayAgainButton')
-
     return (
         <NavLink to='/quiz' className='waves-effect waves-light btn center-block' onClick={resetQuiz}>
             <Icon kind='play_arrow'/> Play Again

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {FC, memo} from 'react';
 
-const Footer = () => {
+const Footer: FC = memo(() => {
     return (
         <footer className='page-footer blue-grey darken-3'>
             <div className="footer-copyright">
@@ -15,6 +15,6 @@ const Footer = () => {
             </div>
         </footer>
     );
-};
+});
 
 export default Footer;
