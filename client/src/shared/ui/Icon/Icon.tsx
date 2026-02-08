@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
 
 const Icon: FC<{kind: string, style?: string}> = ({kind, style}) => {
     return (
