@@ -17,14 +17,12 @@
 </a>
 
 Application is a single repository monolith, consisting of frontend written in [React](https://react.dev/) 
-and a micro backend using [json-server](https://www.npmjs.com/package/json-server) library.
+and a micro backend using [json-server](https://www.npmjs.com/package/json-server) library. As a build tool I use [Vite](https://vite.dev).
 I developed the frontend side of application using [FSD](https://feature-sliced.design/) methodology with some 
-simplifications. For example, the app layer is missing because I didn't want to bother with ejecting webpack.config.
-Although, of course, in the future, as the application grows, it would be worth doing this.
-Also, the processes layer is missing witch is actually good because it is already deprecated.
-Inside pages layer we have ui and lib segments without slices.
+simplifications. For example, inside pages layer we have ui and lib segments without slices.
 
 Application layers:
+- app - everything that makes the app run — entrypoints, global styles: `index.tsx`, `App.tsx`, `index.css`, `App.css`
 - pages - large parts of a page in nested routing in our example that are `Home`, `Quiz` and `Score`
 - widgets - large self-contained chunks of functionality or UI, in our case that are: `QuizCard`, `Footer`, `Header`, `QuizAnswer`, `QuizCardTitle` and `Leaderboard` components
 - features - reused implementations of entire product features, i.e. actions that bring business value to the user: `StartQuizButton`, `NextQuestionButton`, `FinishQuizButton`, `PlayAgain`, `SelecQuizAnswer`
@@ -39,12 +37,13 @@ To speed up the development process, it was decided to use anonymous sessions:
 - 2️⃣ This id is stored in the local storage and state
 - 3️⃣ On the next visit user's id would from local storage taken
 
-Also, due to time limits Components were not 
+Also, I configured [aliasing paths](https://dev.to/tilly/aliasing-in-vite-w-typescript-1lfo) in the project for all layers.
+For now not all Components were 
 divided into [presentational and container](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0), 
 eslint was not configured and there is ability to see only current user's score.
 
 ## Design decisions
-Due to development time constraints and overall small size of the application, it was decided 
+Due to overall small size of the application, it was decided 
 to use [materialize-css](https://materializecss.com/) as the main style library.
 Although of course `MUI` and `ANTD` are more popular now, it seemed to me that this would be too much for a small project.
 

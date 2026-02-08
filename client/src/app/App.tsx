@@ -1,16 +1,14 @@
-import React, {FC, useEffect} from 'react';
-import { useNavigate } from "react-router";
+import {FC, useEffect} from 'react';
 import 'materialize-css';
 import { v4 as uuidv4 } from 'uuid';
-import {setUserId} from './entities/user/model/userSlice';
-import './App.css';
-import {Header} from "./widgets/Header";
-import {Footer} from "./widgets/Footer";
-import AppRoutes from "./pages/lib/routes";
-import {useAppDispatch} from "./shared/store/lib/reduxHooks";
+import {setUserId} from '@/entities/user/model/userSlice.ts';
+import '@/src/app/App.css';
+import {Header} from "@/widgets/Header";
+import {Footer} from "@/widgets/Footer";
+import AppRoutes from "@/pages/lib/routes.tsx";
+import {useAppDispatch} from "@/shared/store/lib/reduxHooks.ts";
 
 const App: FC = () => {
-    const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
     // check userId field in localStorage, if exists set in state, else generate and set in state and localStorage

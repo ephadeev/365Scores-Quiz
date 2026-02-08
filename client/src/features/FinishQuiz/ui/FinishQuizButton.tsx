@@ -1,9 +1,9 @@
-import React, {FC} from 'react';
-import {addScore} from "../../../entities/quiz/model/quizSlice";
-import Icon from "../../../shared/ui/Icon/Icon";
+import {FC} from 'react';
+import {addScore} from "@/entities/quiz/model/quizSlice.ts";
+import Icon from "@/shared/ui/Icon/Icon";
 import {NavLink} from "react-router";
-import {useAppDispatch, useAppSelector} from "../../../shared/store/lib/reduxHooks";
-import {getScore} from "../../../entities/user/model/userSlice";
+import {useAppDispatch, useAppSelector} from "@/shared/store/lib/reduxHooks.ts";
+import {getScore} from "@/entities/user/model/userSlice.ts";
 
 const FinishQuizButton: FC = () => {
     const dispatch = useAppDispatch();

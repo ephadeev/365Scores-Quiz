@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction, createSelector} from "@reduxjs/toolkit";
-import {RootState} from "../../../shared/store/model/store";
+import {RootState} from "@/shared/store/model/store.ts";
 import {IQuiz} from "./IQuiz";
 import {fetchQuizzes} from "../api/quizActionCreators";
 

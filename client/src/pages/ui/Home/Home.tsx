@@ -1,5 +1,5 @@
-import React, {FC} from 'react';
-import StartQuizButton from "../../../features/StartQuiz/ui/StartQuizButton";
+import {FC} from 'react';
+import StartQuizButton from "@/features/StartQuiz/ui/StartQuizButton";
 
 const Home: FC = () => {
     return (

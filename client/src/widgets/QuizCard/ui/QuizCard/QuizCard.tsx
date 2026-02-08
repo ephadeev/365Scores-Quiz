@@ -1,11 +1,11 @@
-import React, {FC, memo} from "react";
+import {FC, memo} from "react";
 import QuizCardTitle from "../QuizCardTitle/QuizCardTitle";
 import QuizAnswersWrapper from "../QuizAnswer/QuizAnswersWrapper";
-import NextQuestionButton from "../../../../features/NextQuestion/ui/NextQuestionButton";
-import FinishQuizButton from "../../../../features/FinishQuiz/ui/FinishQuizButton";
-import {useAppSelector} from "../../../../shared/store/lib/reduxHooks";
-import {getCurrentQuestion, getQuizzesLength} from "../../../../entities/quiz/model/quizSlice";
-import {getCurrentQuestionId} from "../../../../entities/quiz/model/quizSlice";
+import NextQuestionButton from "@/features/NextQuestion/ui/NextQuestionButton";
+import FinishQuizButton from "@/features/FinishQuiz/ui/FinishQuizButton";
+import {useAppSelector} from "@/shared/store/lib/reduxHooks.ts";
+import {getCurrentQuestion, getQuizzesLength} from "@/entities/quiz/model/quizSlice.ts";
+import {getCurrentQuestionId} from "@/entities/quiz/model/quizSlice.ts";
 
 export const QuizCard: FC = memo(() => {
     const quizzesLength = useAppSelector(getQuizzesLength);

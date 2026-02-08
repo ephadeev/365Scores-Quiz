@@ -1,5 +1,4 @@
-import React from 'react';
-import Icon from "../../../shared/ui/Icon/Icon";
+import Icon from "@/shared/ui/Icon/Icon";
 import {NavLink} from "react-router";
 
 const StartQuizButton = () => {

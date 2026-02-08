@@ -1,7 +1,7 @@
 import {createAsyncThunk, GetThunkAPI} from "@reduxjs/toolkit";
 import {IQuiz} from "../model/IQuiz";
 import {getStatus, QuizState} from "../model/quizSlice";
-import {RootState} from "../../../shared/store/model/store";
+import {RootState} from "@/shared/store/model/store.ts";
 
 export const fetchQuizzes = createAsyncThunk<IQuiz[], void, {state: RootState,rejectValue: QuizState['error']}>(
     'quizzes/fetchAll',

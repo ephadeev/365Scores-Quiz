@@ -1,4 +1,4 @@
-import React, {FC, memo} from 'react';
+import {FC, memo} from 'react';
 import {NavLink} from 'react-router';
 
 export const Header: FC = memo(() => {
