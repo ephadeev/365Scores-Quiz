@@ -1,6 +1,6 @@
-import React, {FC} from 'react';
-import {useAppSelector} from "../../../shared/store/lib/reduxHooks";
-import {getScores} from "../../../entities/quiz/model/quizSlice";
+import {FC} from 'react';
+import {useAppSelector} from "@/shared/store/lib/reduxHooks.ts";
+import {getScores} from "@/entities/quiz/model/quizSlice.ts";
 
 export const LeaderBoard: FC<{userName: string}> = ({userName}) => {
     const scores = useAppSelector(getScores);

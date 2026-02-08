@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router";
-import Home from "../ui/Home/Home";
-import Quiz from "../ui/Quiz/Quiz";
-import Score from "../ui/Score/Score";
+import Home from "@/pages/ui/Home/Home";
+import Quiz from "@/pages/ui/Quiz/Quiz";
+import Score from "@/pages/ui/Score/Score";
 
 const AppRoutes = () => {
     const navigationRoutes = [

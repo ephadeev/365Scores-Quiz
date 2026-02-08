@@ -1,8 +1,8 @@
-import React, {FC, memo, useEffect} from 'react';
-import {fetchQuizzes} from "../../../entities/quiz/api/quizActionCreators";
-import {QuizCard} from "../../../widgets/QuizCard";
-import {useAppDispatch, useAppSelector} from "../../../shared/store/lib/reduxHooks";
-import {getStatus} from "../../../entities/quiz/model/quizSlice";
+import {FC, memo, useEffect} from 'react';
+import {fetchQuizzes} from "@/entities/quiz/api/quizActionCreators.ts";
+import {QuizCard} from "@/widgets/QuizCard";
+import {useAppDispatch, useAppSelector} from "@/shared/store/lib/reduxHooks.ts";
+import {getStatus} from "@/entities/quiz/model/quizSlice.ts";
 
 const Quiz: FC = memo(() => {
     const dispatch = useAppDispatch();
@@ -12,8 +12,6 @@ const Quiz: FC = memo(() => {
             dispatch(fetchQuizzes());
         }
     }, [status]);
-
-    console.log('render: Quiz');
     return (
         <>
             {status === 'succeed' && <QuizCard/>}

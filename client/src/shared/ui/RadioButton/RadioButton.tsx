@@ -1,6 +1,6 @@
-import React, {FC, memo, useCallback} from 'react';
-import {getCurrentQuizCorrectAnswer, setSelectedOption} from "../../../entities/quiz/model/quizSlice";
-import {incrementScore} from "../../../entities/user/model/userSlice";
+import {FC, memo, useCallback} from 'react';
+import {getCurrentQuizCorrectAnswer, setSelectedOption} from "@/entities/quiz/model/quizSlice.ts";
+import {incrementScore} from "@/entities/user/model/userSlice.ts";
 import {useAppDispatch, useAppSelector} from "../../store/lib/reduxHooks";
 
 const RadioButton: FC<{

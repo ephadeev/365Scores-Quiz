@@ -1,10 +1,10 @@
-import React, {FC, memo} from 'react';
+import {FC, memo} from 'react';
 import {
     getSelectedOption,
     setSelectedOption,
     incrementCurrentQuestionId
-} from "../../../entities/quiz/model/quizSlice";
-import {useAppDispatch, useAppSelector} from "../../../shared/store/lib/reduxHooks";
+} from "@/entities/quiz/model/quizSlice.ts";
+import {useAppDispatch, useAppSelector} from "@/shared/store/lib/reduxHooks.ts";
 
 const NextQuestionButton: FC = memo(() => {
     const dispatch = useAppDispatch();

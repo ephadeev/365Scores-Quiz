@@ -1,7 +1,7 @@
-import React, {FC, memo} from 'react';
-import {IUser} from "../../../../entities/user/model/IUser";
-import {useAppSelector} from "../../../../shared/store/lib/reduxHooks";
-import {getScore} from "../../../../entities/user/model/userSlice";
+import {FC, memo} from 'react';
+import {IUser} from "@/entities/user/model/IUser.ts";
+import {useAppSelector} from "@/shared/store/lib/reduxHooks.ts";
+import {getScore} from "@/entities/user/model/userSlice.ts";
 
 const QuizCardTitle: FC<{ currentQuestionId: IUser['currentQuestionId']}> = memo(({currentQuestionId}) => {
     const score: IUser['score'] = useAppSelector(getScore);
