@@ -6,7 +6,7 @@ import {
 } from "../../../entities/quiz/model/quizSlice";
 import {useAppDispatch, useAppSelector} from "../../../shared/store/lib/reduxHooks";
 
-const NextQuestion: FC = memo(() => {
+const NextQuestionButton: FC = memo(() => {
     const dispatch = useAppDispatch();
     const selectedOption = useAppSelector(getSelectedOption);
 
@@ -28,4 +28,4 @@ const NextQuestion: FC = memo(() => {
     )
 })
 
-export default NextQuestion;
+export default NextQuestionButton;

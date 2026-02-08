@@ -1,7 +1,7 @@
 import React, {FC, memo} from 'react';
 import QuizAnswer from "./QuizAnswer";
-import {useAppSelector} from "../../../shared/store/lib/reduxHooks";
-import {getCurrentQuizOptions} from "../../../entities/quiz/model/quizSlice";
+import {useAppSelector} from "../../../../shared/store/lib/reduxHooks";
+import {getCurrentQuizOptions} from "../../../../entities/quiz/model/quizSlice";
 
 const QuizAnswersWrapper: FC = memo(() => {
     const currentQuizOptions = useAppSelector(getCurrentQuizOptions);

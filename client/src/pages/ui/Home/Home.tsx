@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import StartQuiz from "../../../features/StartQuiz/ui/StartQuiz";
+import StartQuizButton from "../../../features/StartQuiz/ui/StartQuizButton";
 
 const Home: FC = () => {
     return (
@@ -9,7 +9,7 @@ const Home: FC = () => {
             <p className='center'>From soccer legends to Olympic feats - how well do you know the game?</p>
             <p className='center'>Ready to score?</p>
             <p className='center'>Prove you're a true sports fan!</p>
-            <StartQuiz />
+            <StartQuizButton />
         </>
     )
 }

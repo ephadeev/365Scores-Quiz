@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {useAppSelector} from "../../../shared/store/lib/reduxHooks";
 import {getScores} from "../../../entities/quiz/model/quizSlice";
 
-const LeaderBoard: FC<{userName: string}> = ({userName}) => {
+export const LeaderBoard: FC<{userName: string}> = ({userName}) => {
     const scores = useAppSelector(getScores);
 
     return (
@@ -21,5 +21,3 @@ const LeaderBoard: FC<{userName: string}> = ({userName}) => {
         </div>
     )
 }
-
-export default LeaderBoard;

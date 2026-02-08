@@ -1,7 +1,7 @@
 import React, {FC, memo} from 'react';
 import {NavLink} from 'react-router';
 
-const Header: FC = memo(() => {
+export const Header: FC = memo(() => {
     return (
         <header className='header'>
             <nav className='blue-grey darken-3'>
@@ -15,5 +15,3 @@ const Header: FC = memo(() => {
         </header>
     );
 });
-
-export default Header;

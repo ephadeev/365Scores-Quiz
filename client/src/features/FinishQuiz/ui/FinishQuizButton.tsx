@@ -5,7 +5,7 @@ import {NavLink} from "react-router";
 import {useAppDispatch, useAppSelector} from "../../../shared/store/lib/reduxHooks";
 import {getScore} from "../../../entities/user/model/userSlice";
 
-const FinishQuiz: FC = () => {
+const FinishQuizButton: FC = () => {
     const dispatch = useAppDispatch();
     const score = useAppSelector(getScore);
 
@@ -19,4 +19,4 @@ const FinishQuiz: FC = () => {
     )
 }
 
-export default FinishQuiz;
+export default FinishQuizButton;

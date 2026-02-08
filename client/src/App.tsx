@@ -4,8 +4,8 @@ import 'materialize-css';
 import { v4 as uuidv4 } from 'uuid';
 import {setUserId} from './entities/user/model/userSlice';
 import './App.css';
-import Header from "./widgets/Header/ui/Header";
-import Footer from "./widgets/Footer/ui/Footer";
+import {Header} from "./widgets/Header";
+import {Footer} from "./widgets/Footer";
 import AppRoutes from "./pages/lib/routes";
 import {useAppDispatch} from "./shared/store/lib/reduxHooks";
 

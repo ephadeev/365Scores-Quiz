@@ -1,11 +1,11 @@
 import React, {FC, memo} from 'react';
-import RadioButton from "../../../shared/ui/RadioButton/RadioButton";
-import Icon from "../../../shared/ui/Icon/Icon";
+import RadioButton from "../../../../shared/ui/RadioButton/RadioButton";
+import Icon from "../../../../shared/ui/Icon/Icon";
 import {
     getCurrentQuizCorrectAnswer,
     getSelectedOption
-} from "../../../entities/quiz/model/quizSlice";
-import {useAppSelector} from "../../../shared/store/lib/reduxHooks";
+} from "../../../../entities/quiz/model/quizSlice";
+import {useAppSelector} from "../../../../shared/store/lib/reduxHooks";
 
 const QuizAnswer: FC<{option: string}> = memo(({option}) => {
     const selectedOption = useAppSelector(getSelectedOption);
