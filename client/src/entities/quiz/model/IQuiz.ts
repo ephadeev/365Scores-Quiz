@@ -1,5 +1,5 @@
 export interface IQuiz {
     question: string;
     options: string[];
-    correct: number;
+    correct: string;
 }

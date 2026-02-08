@@ -1,8 +1,7 @@
-import React from 'react';
-import {NavLink} from 'react-router';
-import Icon from "../../../shared/ui/Icon/Icon";
+import React, {FC} from 'react';
+import StartQuizButton from "../../../features/StartQuiz/ui/StartQuizButton";
 
-const Home = () => {
+const Home: FC = () => {
     return (
         <>
             <h1 className='center'>Welcome to 365Scores Quiz!</h1>
@@ -10,9 +9,7 @@ const Home = () => {
             <p className='center'>From soccer legends to Olympic feats - how well do you know the game?</p>
             <p className='center'>Ready to score?</p>
             <p className='center'>Prove you're a true sports fan!</p>
-            <NavLink to='/quiz' className='waves-effect waves-light btn center-block'>
-                <Icon kind='play_arrow'/> Start Your Challenge
-            </NavLink>
+            <StartQuizButton />
         </>
     )
 }

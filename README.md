@@ -21,12 +21,13 @@ and a micro backend using [json-server](https://www.npmjs.com/package/json-serve
 I developed the frontend side of application using [FSD](https://feature-sliced.design/) methodology with some 
 simplifications. For example, the app layer is missing because I didn't want to bother with ejecting webpack.config.
 Although, of course, in the future, as the application grows, it would be worth doing this.
-Also, the processes layer is missing witch is actually good because it is already deprecated. Features layer is missing.
+Also, the processes layer is missing witch is actually good because it is already deprecated.
 Inside pages layer we have ui and lib segments without slices.
 
 Application layers:
 - pages - large parts of a page in nested routing in our example that are `Home`, `Quiz` and `Score`
-- widgets - large self-contained chunks of functionality or UI, in our case that are: `QuizCard` and `Leaderboard` components
+- widgets - large self-contained chunks of functionality or UI, in our case that are: `QuizCard`, `Footer`, `Header`, `QuizAnswer`, `QuizCardTitle` and `Leaderboard` components
+- features - reused implementations of entire product features, i.e. actions that bring business value to the user: `StartQuizButton`, `NextQuestionButton`, `FinishQuizButton`, `PlayAgain`, `SelecQuizAnswer`
 - entities - business entities that the project works with: `User` and `Quiz`
 - shared - reusable functionality, especially when it's detached from the specifics of the project/business
 

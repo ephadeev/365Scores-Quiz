@@ -1,23 +1,23 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction, createSelector} from "@reduxjs/toolkit";
 import {RootState} from "../../../shared/store/model/store";
 import {IQuiz} from "./IQuiz";
 import {fetchQuizzes} from "../api/quizActionCreators";
 
 export interface QuizState {
     questions: IQuiz[] | null;
-    isLoading: boolean;
+    status: 'idle' | 'pending' | 'succeed' | 'failed';
+    currentQuestionId: number;
     error: string;
-    selectedOption: number | null;
-    isAnswerChecked: boolean;
+    selectedOption: string | null;
     scores: number[];
 }
 
 const initialState: QuizState = {
     questions: null,
-    isLoading: false,
+    status: 'idle',
+    currentQuestionId: 0,
     error: '',
     selectedOption: null,
-    isAnswerChecked: false,
     scores: []
 };
 
@@ -27,9 +27,6 @@ export const quizSlice = createSlice({
     reducers: {
         setSelectedOption: (state, action: PayloadAction<QuizState['selectedOption']>) => {
             state.selectedOption = action.payload;
-        },
-        setIsAnswerChecked: (state, action: PayloadAction<QuizState['isAnswerChecked']>) => {
-            state.isAnswerChecked = action.payload;
         },
         addScore: (state, action: PayloadAction<number>) => {
             const newScore = action.payload;
@@ -55,19 +52,25 @@ export const quizSlice = createSlice({
             } else {
                 state.scores.push(newScore);
             }
+        },
+        incrementCurrentQuestionId: state => {
+            state.currentQuestionId += 1;
+        },
+        resetCurrentQuestionId: state => {
+            state.currentQuestionId = initialState.currentQuestionId;
         }
 
     },
     extraReducers: (builder) => {
         builder.addCase(fetchQuizzes.pending, (state) => {
-            state.isLoading = true;
+            state.status = 'pending';
         });
         builder.addCase(fetchQuizzes.fulfilled, (state, action: PayloadAction<IQuiz[]>) => {
-            state.isLoading = false;
+            state.status = 'succeed';
             state.questions = action.payload;
         });
         builder.addCase(fetchQuizzes.rejected, (state, action) => {
-            state.isLoading = false;
+            state.status = 'failed';
             if (action.payload) {
                 state.error = action.payload;
             } else {
@@ -77,10 +80,29 @@ export const quizSlice = createSlice({
     }
 })
 
-
 export const getQuizzes = (state: RootState) => state.quiz;
+export const getQuestions = createSelector(
+    [getQuizzes],
+    (quizzes) => quizzes.questions
+);
+export const getQuizzesLength = (state: RootState) => state.quiz.questions && state.quiz.questions.length;
+export const getCurrentQuestionId = (state: RootState) => state.quiz.currentQuestionId;
+export const getCurrentQuestion = createSelector(
+    [getQuestions, getCurrentQuestionId],
+    (questions, currentQuestionId) => questions && questions[currentQuestionId].question
+);
+export const getCurrentQuizOptions = createSelector(
+    [getQuestions, getCurrentQuestionId],
+    (questions, currentQuestionId) => questions && questions[currentQuestionId].options
+);
+export const getCurrentQuizCorrectAnswer = createSelector(
+    [getQuestions, getCurrentQuestionId],
+    (questions, currentQuestionId) => questions && questions[currentQuestionId].correct
+);
 export const getSelectedOption = (state: RootState) => state.quiz.selectedOption;
-export const getIsAnswerChecked = (state: RootState) => state.quiz.isAnswerChecked;
 export const getScores = (state: RootState) => state.quiz.scores;
-export const {setSelectedOption, setIsAnswerChecked, addScore} = quizSlice.actions;
+export const getStatus = (state: RootState) => state.quiz.status;
+
+export const {setSelectedOption, addScore, incrementCurrentQuestionId, resetCurrentQuestionId} = quizSlice.actions;
+
 export default quizSlice.reducer;
