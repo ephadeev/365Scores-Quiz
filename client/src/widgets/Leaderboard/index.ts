@@ -1,1 +1,1 @@
-export {LeaderBoard} from './ui/LeaderBoard';
+export { LeaderBoard } from './ui/LeaderBoard';
