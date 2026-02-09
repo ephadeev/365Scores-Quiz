@@ -38,9 +38,8 @@ To speed up the development process, it was decided to use anonymous sessions:
 - 3️⃣ On the next visit user's id would from local storage taken
 
 Also, I configured [aliasing paths](https://dev.to/tilly/aliasing-in-vite-w-typescript-1lfo) in the project for all layers.
-For now not all Components were 
-divided into [presentational and container](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0), 
-eslint was not configured and there is ability to see only current user's score.
+For linting & formatting I use [Biome](https://biomejs.dev).
+For now not all Components were divided into [presentational and container](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0).
 
 ## Design decisions
 Due to overall small size of the application, it was decided 
