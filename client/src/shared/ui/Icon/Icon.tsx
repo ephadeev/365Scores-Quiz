@@ -1,9 +1,7 @@
-import {FC} from 'react';
+import type { FC } from 'react';
 
-const Icon: FC<{kind: string, style?: string}> = ({kind, style}) => {
-    return (
-        <i className={`material-icons ${style}`}>{kind}</i>
-    );
-}
+const Icon: FC<{ kind: string; style?: string }> = ({ kind, style }) => {
+	return <i className={`material-icons ${style}`}>{kind}</i>;
+};
 
 export default Icon;
