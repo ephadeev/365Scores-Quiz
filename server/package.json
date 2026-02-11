@@ -1,13 +1,9 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "start": "npx json-server db.json --port 5000"
+    "start": "npx json-server db.json --port 5000 --host 0.0.0.0"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "json-server": "^1.0.0-beta.3"
   }

@@ -21,6 +21,7 @@
     "url": "https://github.com/ephadeev/365Scores-Quiz/issues"
   },
   "homepage": "https://github.com/ephadeev/365Scores-Quiz#readme",
+  "workspaces": ["client", "server"],
   "description": "",
   "devDependencies": {
     "concurrently": "^9.2.1",
