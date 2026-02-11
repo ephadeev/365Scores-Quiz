@@ -1,4 +1,5 @@
 {
+  "installCommand": "npm ci && npm ci client && npm ci server",
   "builds": [
     {
       "src": "server/package.json",

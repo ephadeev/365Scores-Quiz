@@ -8,7 +8,7 @@
     "client:build": "npm run build --prefix client",
     "server:install": "npm ci --prefix server",
     "server": "npm run start --prefix server",
-    "install": "concurrently \"npm run client:install\" \"npm run server:install\"",
+    "app:install": "concurrently \"npm run client:install\" \"npm run server:install\"",
     "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
