@@ -17,9 +17,6 @@
       "dest": "/server"
     },
     {
-      "handle": "filesystem"
-    },
-    {
       "src": "/(.+)",
       "dest": "client/dist/index.html"
     }
