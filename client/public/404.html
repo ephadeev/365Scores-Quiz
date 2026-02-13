@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Single Page Apps for GitHub Pages</title>
+  <script type="text/javascript">
+    // Single Page App, use HTML5 history API for navigation
+    const pathSegmentsToKeep = 1;
+    const scriptPath = location.pathname.split('/').slice(-pathSegmentsToKeep).join('/');
+    sessionStorage.redirect = location.href;
+    location.href = '/' + scriptPath + '/index.html';
+  </script>
+</head>
+<body>
+</body>
+</html>
