@@ -2,10 +2,11 @@
   "name": "server",
   "version": "1.0.0",
   "scripts": {
-    "start": "npx json-server db.json --port $PORT --host 0.0.0.0 --middleware cors.json",
+    "start": "node index.js",
     "dev": "npx json-server db.json --port 5000 --watch"
   },
   "dependencies": {
+    "cors": "^2.8.6",
     "json-server": "^1.0.0-beta.3"
   }
 }
