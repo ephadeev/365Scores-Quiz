@@ -4,7 +4,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import * as path from 'node:path';
 
 export default defineConfig({
-	base: '/365scores-quiz/',
+	base: '/365Scores-Quiz/',
 	define: {
 		global: 'globalThis',
 	},
