@@ -79,7 +79,7 @@ in `./client` on the main branch. Deployment workflow in: [`/.github/workflows/d
 
 ### Backend
 Backend is deployed to [Vercel](https://vercel.com/). Deployment is triggered automatically when there are changes
-in `./server` on the main branch. Deployment workflow in: [`/server/vercel.json`](/server/vercel.json)
+in `./server` on the main branch. Deployment settings in: [`/server/vercel.json`](/server/vercel.json)
 
 ## License
 
