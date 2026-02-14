@@ -8,6 +8,7 @@
 - [State management](#State-management)
 - [Component structure](#Component-structure)
 - [Running locally](#Running-locally)
+- [Deployment](#Deployment)
 - [License](#License)
 
 ## Application architecture
@@ -38,8 +39,9 @@ To speed up the development process, it was decided to use anonymous sessions:
 - 3️⃣ On the next visit user's id would from local storage taken
 
 Also, I configured [aliasing paths](https://dev.to/tilly/aliasing-in-vite-w-typescript-1lfo) in the project for all layers.
-For linting & formatting I use [Biome](https://biomejs.dev).
+For linting & formatting I use [Biome](https://biomejs.dev). 
 For now not all Components were divided into [presentational and container](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0).
+In the backend side was configured simple [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS).
 
 ## Design decisions
 Due to overall small size of the application, it was decided 
@@ -68,6 +70,16 @@ npm ci
 ```bash
 npm run dev
 ```
+
+## Deployment
+### Frontend
+Frontend is deployed to [GitHub Pages](https://docs.github.com/ru/pages) using 
+[GitHub Actions](https://github.com/features/actions). Deployment is triggered automatically when there are changes 
+in `./client` on the main branch. Deployment workflow in: [`/.github/workflows/deploy.yml`](/.github/workflows/deploy.yml)
+
+### Backend
+Backend is deployed to [Vercel](https://vercel.com/). Deployment is triggered automatically when there are changes
+in `./server` on the main branch. Deployment workflow in: [`/server/vercel.json`](/server/vercel.json)
 
 ## License
 
